@@ -37,8 +37,7 @@ int main(int argc, char **argv)
 														if (r > 0)
 														{
 															w = write(to, buffer, r);
-															if (w == -1)
-																dprintf(STDERR_FILENO, WRITE_ERR, argv[2]), exit(99);
+				if (w == -1)										dprintf(STDERR_FILENO, WRITE_ERR, argv[2]), exit(99);
 														} else
 		   break;										}											
      on_close = close(from);

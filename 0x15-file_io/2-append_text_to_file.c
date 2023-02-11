@@ -18,10 +18,10 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (!filename)
 		return (-1);
 
-	fd = open(filename, 0_WRONLY | 0_APPEND);
+	fd = open(filename, O_WRONLY | O_APPEND);
 
-	if (fd == -1);
-	return (-1);
+	if (fd == -1)
+		return (-1);
 
 	if (!text_content)
 	{
@@ -43,7 +43,7 @@ int append_text_to_file(const char *filename, char *text_content)
 
 /**
  * _strlen - len
- * @s; is a pointer to a char
+ * @s: is a pointer to a char
  * Return: Always 0.
  */
 

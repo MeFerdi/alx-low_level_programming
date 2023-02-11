@@ -21,7 +21,7 @@ int create_file(const char *filename, cahr *text_content)
 		{
 			return (-1);
 		}
-		fd = open(filename, 0_RDWR | 0_CREAT | 0_TRUNC, 06000);
+		fd = open(filename, O_RDWR | O_CREAT | O_TRUNC, 06000);
 		if (fd == -1)
 			return (-1);
 		if (!text_content)
