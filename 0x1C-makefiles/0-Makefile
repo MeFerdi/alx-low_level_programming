@@ -1,0 +1,23 @@
+# A Makefile for building 'school' executable
+
+# defining variables
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+SRCS = main.c school.c
+OBJS = $(SRCS:.c=.o)
+EXEC = school
+
+# Default rule
+all: $(EXEC)
+
+# Rule to build the executable
+$(EXEC): $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $@
+
+# Rule to compile source files
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Clean rule to remove object files and executable
+clean:
+	rm -f $(OBJS) $(EXEC)
