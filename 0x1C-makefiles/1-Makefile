@@ -1,0 +1,17 @@
+# Makefile for building 'school' executable
+
+# Define variables
+CC = gcc
+SRC = main.c school.c
+EXEC = school
+
+# Default rule
+all: $(EXEC)
+
+# Rule to build the executable
+$(EXEC): $(SRC)
+	$(CC) $(SRC) -o $@
+
+# Clean rule to remove the executable
+clean:
+	rm -f $(EXEC)
